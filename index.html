@@ -1,0 +1,63 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grids</title>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+
+        <script>
+
+     
+        "use strict";
+        let canvas;
+        let context;
+        let width = 320;
+        let control = "";
+        window.onload = init;
+
+ class Controller{
+     constructor(){
+         //create
+     }
+     step(){
+         //step
+     }
+     draw(){
+        //draw
+     }
+     
+ }
+
+
+ function init(){
+     canvas = document.getElementById('canvas');
+     context = canvas.getContext('2d');
+
+     canvas.width = window.innerWidth;
+     canvas.height = window.innerHeight;
+
+     //new ground controller
+     control = new Controller();
+     // Start the first frame request
+     window.requestAnimationFrame(gameLoop);
+ }
+
+ function gameLoop(timeStamp){
+     context.clearRect(0, 0, canvas.width, canvas.height);
+     control.step();
+     //draw();
+
+     // Keep requesting new frames
+     window.requestAnimationFrame(gameLoop);
+ }
+
+ function draw(){
+     
+ }
+ </script>
+        </script>
+    </body>
+    </html>

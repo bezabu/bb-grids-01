@@ -22,15 +22,30 @@
      constructor(){
          //create
      }
+     makeGrid(){
+        //make grid
+     }
      step(){
          //step
      }
      draw(){
         //draw
      }
-     
+     drawHex(center, size, i){
+        //draw an individual hex
+        var angle_deg = 60 * i - 30;
+        var angle_rad = Math.PI / 180 * angle_deg;
+        return {center.x + size * Math.cos(angle_rad),
+            center.y + size * Math.sin(angle_rad)
+        }
+
+     }
  }
 
+ function point(x,y){
+
+    return {x,y};
+ }
 
  function init(){
      canvas = document.getElementById('canvas');
